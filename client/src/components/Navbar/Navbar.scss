@@ -1,0 +1,17 @@
+@import 'src/App.scss';
+
+.navbar {
+  width: 100vw;
+  height: $navbarHeight;
+  background-color: $primaryColor;
+  display: flex;
+  align-items: center;
+  color: white;
+
+}
+
+.logo {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}

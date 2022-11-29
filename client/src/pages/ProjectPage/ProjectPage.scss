@@ -1,0 +1,20 @@
+@import 'src/App';
+
+.wrapper {
+  width: 100vw;
+  height: calc(100vh - $navbarHeight);
+}
+
+.projects {
+  width: 80%;
+  padding: 20px;
+  margin: auto;
+}
+
+.projectsBoard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  padding: 10px;
+};
