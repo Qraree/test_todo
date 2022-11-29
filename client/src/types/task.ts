@@ -6,8 +6,17 @@ export interface ITask {
     priority?: number,
     files?: IFile[],
     status?: string,
-    checkList?: checkListItem[]
+    checkList?: checkListItem[],
+    projectId?: number,
+    comments?: IComment[]
 }
+
+interface IComment {
+    content: string,
+    replies?: IComment[]
+}
+
+
 
 interface IFile {
     name: string
