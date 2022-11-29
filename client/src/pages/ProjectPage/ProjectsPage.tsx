@@ -18,7 +18,7 @@ const ProjectsPage: FC = () => {
              <div className={'projects'}>
                  <h3>Проекты</h3>
                  <div className={'projectsBoard'}>
-                    {projects.map(prj => <Project id={prj.id} name={prj.name} key={prj.id}/>)}
+                    {projects.map(prj => <Project project={prj} key={prj.id}/>)}
                  </div>
              </div>
          </div>

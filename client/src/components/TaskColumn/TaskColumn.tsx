@@ -1,12 +1,13 @@
 import React, {FC} from 'react';
-import  './StatusColumn.scss'
+import  './TaskColumn.scss'
 import {ITask} from "../../types/task";
+import Task from "./Task/Task";
 
 interface StatusColumnProps {
     name: string
 }
 
-const StatusColumn:FC<StatusColumnProps> = ({name}) => {
+const TaskColumn:FC<StatusColumnProps> = ({name}) => {
 
     const tasks: ITask[] = [
         {
@@ -28,10 +29,10 @@ const StatusColumn:FC<StatusColumnProps> = ({name}) => {
         <div className={'column'}>
             <h4>{name}</h4>
             <div className={'taskList'}>
-                {tasks.map(task => <div className={'task'}>{task.name}</div>)}
+                {tasks.map(task => <Task task={task}/>)}
             </div>
         </div>
     );
 };
 
-export default StatusColumn;
+export default TaskColumn;
