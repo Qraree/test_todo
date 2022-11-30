@@ -1,7 +1,7 @@
 export interface ITask {
     name: string,
     description?: string,
-    createdAt?: string,
+    createdAt?: Date,
     deadline?: string,
     priority?: number,
     files?: IFile[],
@@ -15,8 +15,6 @@ interface IComment {
     content: string,
     replies?: IComment[]
 }
-
-
 
 interface IFile {
     name: string
