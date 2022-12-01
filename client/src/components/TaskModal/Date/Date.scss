@@ -1,0 +1,25 @@
+.date {
+  font-family: "Segoe UI"
+}
+
+.start {
+  margin-bottom: 5px;
+}
+
+.due-time {
+  background-color: #e74545;
+  width: 150px;
+  padding: 4px;
+  color: white;
+  border-radius: 5px;
+}
+
+.due {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.due-name {
+  margin-right: 5px;
+}

@@ -1,0 +1,23 @@
+.file-wrapper {
+  background-color: gainsboro;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+
+  &:hover {
+    background-color: #cbcaca;
+  }
+}
+
+.file-logo {
+  height: 50px;
+  width: 100px;
+  background-color: #939393;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gainsboro;
+  font-weight: bold;
+}

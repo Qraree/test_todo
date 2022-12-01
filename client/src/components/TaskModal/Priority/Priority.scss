@@ -1,0 +1,31 @@
+.priority {
+  display: flex;
+  flex-direction: row;
+  //justify-content: center;
+  align-items: center;
+  height: 40px;
+  //border: 2px solid black;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #5583e7;
+  margin-top: 4px;
+  //border: 2px solid black;
+}
+
+.circle-div {
+  height: 20px;
+}
+
+.priority-header {
+  //border: 2px solid black;
+  margin-right: 7px;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  height: 100%;
+}

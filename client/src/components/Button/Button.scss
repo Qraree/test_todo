@@ -1,0 +1,12 @@
+.change, .add {
+  width: 70px;
+  height: 40px;
+  background-color: #e7e3e3;
+  padding: 5px;
+  border: 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: gainsboro;
+  }
+}
