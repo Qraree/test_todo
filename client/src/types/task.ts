@@ -1,14 +1,17 @@
+import {DateTime} from "luxon";
+
 export interface ITask {
+    _id: string,
     name: string,
-    description?: string,
-    createdAt?: Date,
-    deadline?: string,
-    priority?: number,
-    files?: IFile[],
-    status?: string,
-    checkList?: checkListItem[],
-    projectId?: number,
-    comments?: IComment[]
+    description: string,
+    createdAt: DateTime,
+    deadline: DateTime,
+    priority: number,
+    files: IFile[],
+    status: string,
+    checkList: checkListItem[],
+    projectId: string,
+    comments: IComment[]
 }
 
 interface IComment {
@@ -16,8 +19,9 @@ interface IComment {
     replies?: IComment[]
 }
 
-interface IFile {
-    name: string
+export interface IFile {
+    name: string,
+    added: DateTime,
 }
 
 interface checkListItem {

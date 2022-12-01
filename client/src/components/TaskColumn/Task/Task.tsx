@@ -20,6 +20,12 @@ const Task: FC<TaskProps> = ({task}) => {
 
     }
 
+    const colorList = {
+        1: 'rgb(95,210,57)',
+        2: 'rgb(215,150,62)',
+        3: 'rgb(236,83,83)',
+    }
+
     function dragLeaveHandler(e: React.DragEvent<HTMLDivElement>) {
         (e.target as HTMLTextAreaElement).style.boxShadow = 'none'
     }
@@ -53,7 +59,8 @@ const Task: FC<TaskProps> = ({task}) => {
             onClick={showModalHandler}
 
         >
-            {task.name}
+            <div className={'task-name'}>{task.name}</div>
+            <div className={'priority-div'} style={{backgroundColor: task.priority === 1 ? colorList[1] : (task.priority === 2 ? colorList[2] : colorList[3])}}></div>
         </div>
     );
 };
