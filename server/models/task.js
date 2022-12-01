@@ -12,5 +12,5 @@ const Task = new Schema({
     projectId: {type: ObjectId, ref: 'Project'},
     comments: [{type: ObjectId, ref: 'Comment'}],
 })
-
+// todo add new field "timeAtWork"
 module.exports = model('Task', Task)
