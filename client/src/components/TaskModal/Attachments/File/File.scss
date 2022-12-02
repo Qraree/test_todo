@@ -1,10 +1,12 @@
 .file-wrapper {
+  width: 97%;
   background-color: gainsboro;
   margin-bottom: 10px;
   border-radius: 5px;
-  padding: 5px;
   display: flex;
   flex-direction: row;
+  //outline: solid;
+  align-items: center;
 
   &:hover {
     background-color: #cbcaca;
@@ -12,12 +14,20 @@
 }
 
 .file-logo {
-  height: 50px;
+  height: 85px;
   width: 100px;
-  background-color: #939393;
+  background-color: #b4b3b3;
   display: flex;
   justify-content: center;
   align-items: center;
   color: gainsboro;
   font-weight: bold;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 18px;
+  //border: 2px solid black;
+}
+
+.file-info {
+  padding: 5px  ;
 }

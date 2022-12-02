@@ -1,0 +1,42 @@
+.comment {
+  width: 95%;
+  height: 30%;
+  //display: flex;
+  //flex-direction: column;
+  //align-items: flex-end;
+}
+
+.comment-content {
+  width: 100%;
+  //outline: solid;
+  background-color: #fff;
+  border: 2px solid gainsboro;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.replies {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.replies-list {
+  //outline: solid;
+  width: 99%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.comment-text {
+  max-width: 80%;
+  word-break: break-all;
+}

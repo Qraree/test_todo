@@ -1,0 +1,10 @@
+
+.input {
+  overflow-wrap: break-word;
+  resize: vertical;
+  overflow: auto;
+}
+
+.input::-webkit-scrollbar {
+  display: none;
+}

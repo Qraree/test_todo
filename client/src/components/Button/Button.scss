@@ -1,4 +1,4 @@
-.change, .add {
+.change,{
   width: 70px;
   height: 40px;
   background-color: #e7e3e3;
@@ -8,5 +8,56 @@
 
   &:hover {
     background-color: gainsboro;
+  }
+}
+
+.delete-file {
+  width: 40px;
+  height: 30px;
+  background-color: transparent;
+  padding: 5px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: underline;
+
+
+  &:hover {
+    color: #919090;
+  }
+}
+
+.delete-subtask {
+  background-color: transparent;
+  border: 0;
+  margin-right: 10px;
+
+  &:hover {
+    background-color: #e7e3e3;
+  }
+}
+
+.add {
+  width: 60px;
+  height: 30px;
+  background-color: #e7e3e3;
+  padding: 5px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: gainsboro;
+  }
+}
+
+.link-to-home {
+  background-color: transparent;
+  border: 0;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    color: gainsboro;
   }
 }

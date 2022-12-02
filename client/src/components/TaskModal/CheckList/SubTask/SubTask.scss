@@ -1,0 +1,14 @@
+.subtask {
+  display: flex;
+  flex-direction: row;
+  width: 94%;
+  background-color: gainsboro;
+  margin-bottom: 10px;
+  padding: 10px;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.box {
+  margin-right: 10px;
+}
