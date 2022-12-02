@@ -4,11 +4,12 @@ import './Button.scss'
 interface ButtonProps {
     children: string,
     className: string,
+    onCLick?: () => void,
 }
 
-const Button: FC<ButtonProps> = ({children, className}) => {
+const Button: FC<ButtonProps> = ({children, className, onCLick}) => {
     return (
-        <button className={className}>
+        <button className={className} onClick={onCLick}>
             {children}
         </button>
     );

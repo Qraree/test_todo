@@ -16,8 +16,8 @@ const Description: FC<DescriptionProps> = ({description}) => {
                     <textarea
                         className={'input'}
                         placeholder={'Add description'}
-                        rows={8}
-                        cols={55}
+                        rows={7}
+                        cols={80}
                         value={input}
                         onChange={e => setInput(e.target.value)}/>
                     <Button className={'add'}>Add</Button>

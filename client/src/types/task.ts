@@ -9,12 +9,13 @@ export interface ITask {
     priority: number,
     files: IFile[],
     status: string,
-    checkList: checkListItem[],
+    checkList: ICheckListItem[],
     projectId: string,
     comments: IComment[]
 }
 
-interface IComment {
+export interface IComment {
+    _id: string
     content: string,
     replies?: IComment[]
 }
@@ -24,7 +25,8 @@ export interface IFile {
     added: DateTime,
 }
 
-interface checkListItem {
+export interface ICheckListItem {
+    _id: string;
     name: string,
     done: boolean
 }

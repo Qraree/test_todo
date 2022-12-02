@@ -8,6 +8,8 @@ import Priority from "./Priority/Priority";
 import Date from "./Date/Date";
 import Header from "./Header/Header";
 import Attachments from "./Attachments/Attachments";
+import CheckList from "./CheckList/CheckList";
+import CommentsList from "./Comments/CommentsList";
 
 interface TaskProps {
     currentTask: ITask
@@ -32,8 +34,8 @@ const TaskModal: FC<TaskProps> = ({currentTask}) => {
                         <Priority color={currentTask.priority}/>
                         <Description description={currentTask.description}/>
                         <Attachments files={currentTask.files}/>
-                        </div>
-                    <div className={'task-buttons'}>
+                        <CheckList list={currentTask.checkList}/>
+                        <CommentsList list={currentTask.comments}/>
                     </div>
                 </div>
             </div>

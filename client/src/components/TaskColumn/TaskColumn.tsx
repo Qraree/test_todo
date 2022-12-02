@@ -20,20 +20,41 @@ const TaskColumn:FC<StatusColumnProps> = ({name}) => {
             priority: 2,
             files: [
                 {name: 'File1.txt', added: DateTime.local(2022, 11, 15, 8, 30)},
-                {name: 'File2.txt', added: DateTime.local(2022, 11, 13, 9, 34)}],
+                {name: 'File2.txt', added: DateTime.local(2022, 11, 13, 9, 34)},
+                {name: 'File2.pdf', added: DateTime.local(2022, 11, 13, 9, 34)},
+            ],
             status: 'QUEUE',
             checkList: [{
+                _id: '1241',
                 name: 'Call mom',
                 done: false
             },
                 {
-                    name: 'call DAd',
+                    _id: '1221',
+                    name: 'call Dad',
                     done: true
                 }],
             projectId: '1',
             comments: [
-                {content: 'Bla-bla-bla', replies: [{content: 'You okay?'}]},
-                {content: 'I will do this task!'}
+                {
+                    _id: '123', content: 'Bla-bla-bla',
+                    replies: [
+                        {_id: '123', content: 'You okay?', replies: [{_id: '12', content: 'Hello!', replies: [
+                                    {_id: '123', content: 'You okay?', replies: [{_id: '123', content: 'Hello!'}]},
+                                    {_id: '123', content: 'You okay?', replies: [{_id: '123', content: 'Hello!'}]}
+                                ]}]},
+                        {_id: '1412', content: 'You okay?', replies: [{_id: '123', content: 'Hello!'}]}
+                    ]
+                },
+                {_id: '123', content: 'I will do this task!'},
+                {_id: '123', content: 'I will do this task!'},
+                {
+                    _id: '123', content: 'Bla-bla-bla',
+                    replies: [
+                        {_id: '123', content: 'You okay?', replies: [{_id: '12345', content: 'Hello!'}]},
+                        {_id: '123', content: 'You okay?', replies: [{_id: '123', content: 'Hello!'}]}
+                    ]
+                },
             ]
         },
 
