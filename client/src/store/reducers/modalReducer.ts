@@ -13,17 +13,19 @@ export const initialState = {
         files: [{name: 'File.1', added: DateTime.now()}, {name: 'File.2', added: DateTime.now()}],
         status: 'QUEUE',
         checkList: [{
+            _id: '123',
             name: 'Call mom',
             done: false
         },
             {
+                _id: '141',
                 name: 'call DAd',
                 done: true
             }],
         projectId: '1',
         comments: [
-            {content: 'Bla-bla-bla', replies: [{content: 'You okay?'}]},
-            {content: 'I will do this task!'}
+            {_id: '1', content: 'Bla-bla-bla', replies: [{_id: '1',content: 'You okay?'}]},
+            {_id: '1',content: 'I will do this task!'}
         ]
 
     },
