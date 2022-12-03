@@ -2,7 +2,9 @@ import React, {FC} from 'react';
 import './Input.scss'
 
 interface InputProps {
-    className: string
+    className: string,
+    value: string,
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
 const Input:FC<InputProps> = ({className}) => {

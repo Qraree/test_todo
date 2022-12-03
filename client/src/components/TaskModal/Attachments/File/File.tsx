@@ -5,10 +5,15 @@ import {DateTime} from "luxon";
 import Button from "../../../Button/Button";
 
 interface FileProps {
-    file: IFile
+    file: IFile,
+    deleteFile: (id: string) => void
 }
 
-const File: FC<FileProps> = ({file}) => {
+const File: FC<FileProps> = ({file, deleteFile}) => {
+    function deleteFileHandler() {
+        deleteFile(file._id)
+    }
+
     return (
         <div className={'file-wrapper'}>
             <div className={'file-logo'}>
@@ -23,7 +28,7 @@ const File: FC<FileProps> = ({file}) => {
                         Added {file.added.toLocaleString(DateTime.DATETIME_MED)}
                     </div>
                     <div>
-                        <Button className={'delete-file'}>Delete</Button>
+                        <Button className={'delete-file'} onCLick={deleteFileHandler}>Delete</Button>
                     </div>
                 </div>
             </div>

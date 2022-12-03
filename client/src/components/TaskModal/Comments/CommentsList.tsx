@@ -1,22 +1,50 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {IComment} from "../../../types/task";
 import Comment from "./Comment/Comment";
 import './CommentsList.scss'
 import Button from "../../Button/Button";
+import {getRandomId} from "../../../utils/random_id";
 
 interface CommentsProps {
     list: IComment[]
 }
 
 const CommentsList: FC<CommentsProps> = ({list}) => {
+    const [input, setInput] = useState<string>('')
+    const [commentsListState, setCommentsListState] = useState<IComment[]>(list)
+
+    function addComment() {
+        let newComment:IComment = {
+            _id: getRandomId(),
+            content: input,
+            replies: []
+        }
+        setCommentsListState([...commentsListState, newComment])
+        setInput('')
+    }
+
+    function addReply(message: string) {
+        let newReply: IComment = {
+            _id: getRandomId(),
+            content: message,
+            replies: []
+        }
+    }
+
+
     return (
         <div>
             <h4>Comments</h4>
-            <textarea rows={5} cols={75} className={'add-comment'}/>
+            <textarea
+                rows={5}
+                cols={80}
+                className={'add-comment'}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}/>
             <br/>
-            <Button className={'add'}>Add</Button>
+            <Button className={'add'} onCLick={addComment}>Add</Button>
             <div className={'comments-list'}>
-                {list.map(comment => <Comment comment={comment}/>)}
+                {commentsListState.map(comment => <Comment comment={comment} key={comment._id} />)}
             </div>
         </div>
     );
