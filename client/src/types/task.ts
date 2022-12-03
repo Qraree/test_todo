@@ -17,10 +17,11 @@ export interface ITask {
 export interface IComment {
     _id: string
     content: string,
-    replies?: IComment[]
+    replies: IComment[]
 }
 
 export interface IFile {
+    _id: string,
     name: string,
     added: DateTime,
 }
