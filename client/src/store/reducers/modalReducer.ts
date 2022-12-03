@@ -10,7 +10,7 @@ export const initialState = {
         createdAt: DateTime.now(),
         deadline: DateTime.now(),
         priority: 1,
-        files: [{name: 'File.1', added: DateTime.now()}, {name: 'File.2', added: DateTime.now()}],
+        files: [{_id: '234', name: 'File.1', added: DateTime.now()}, {_id: '235', name: 'File.2', added: DateTime.now()}],
         status: 'QUEUE',
         checkList: [{
             _id: '123',
@@ -24,8 +24,8 @@ export const initialState = {
             }],
         projectId: '1',
         comments: [
-            {_id: '1', content: 'Bla-bla-bla', replies: [{_id: '1',content: 'You okay?'}]},
-            {_id: '1',content: 'I will do this task!'}
+            {_id: '1', content: 'Bla-bla-bla', replies: [{_id: '1',content: 'You okay?', replies: []}]},
+            {_id: '1',content: 'I will do this task!', replies: []}
         ]
 
     },

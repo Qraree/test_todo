@@ -2,7 +2,7 @@ import {UiAction, UiActionTypes, UiState} from "../../types/ui";
 
 
 export const initialState = {
-    showDescription: false,
+    showDescription: true,
     currentProject: '',
 }
 
