@@ -3,7 +3,7 @@
 }
 
 .start {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .due-time {
@@ -22,4 +22,17 @@
 
 .due-name {
   margin-right: 5px;
+}
+
+.picker {
+  width: 250px;
+  height: 55px;
+  border-radius: 5px;
+
+}
+
+.timeAtWork {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
 }

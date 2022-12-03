@@ -1,10 +1,13 @@
+@import 'src/App';
+
 .change,{
   width: 70px;
   height: 40px;
-  background-color: #e7e3e3;
+  background-color: gainsboro;
   padding: 5px;
   border: 0;
   cursor: pointer;
+  border-radius: 5px;
 
   &:hover {
     background-color: gainsboro;
@@ -12,11 +15,14 @@
 }
 
 .delete-file {
-  width: 40px;
+  width: 60px;
+  //background-color: #919090;
   height: 30px;
   background-color: transparent;
   padding: 5px;
+  margin-right: 10px;
   border: 0;
+  font-size: 12px;
   cursor: pointer;
   text-decoration: underline;
 
@@ -39,7 +45,7 @@
 .add {
   width: 60px;
   height: 30px;
-  background-color: #e7e3e3;
+  background-color: gainsboro;
   padding: 5px;
   border: 0;
   cursor: pointer;
@@ -60,4 +66,19 @@
   &:hover {
     color: gainsboro;
   }
+}
+
+button {
+  font-size: 15px;
+}
+
+.upload-file {
+  //display: inline-block;
+  margin-top: 10px;
+  background-color: $primaryColor;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border: 0;
 }
