@@ -4,6 +4,7 @@ import Comment from "./Comment/Comment";
 import './CommentsList.scss'
 import Button from "../../Button/Button";
 import {getRandomId} from "../../../utils/random_id";
+import {DateTime} from "luxon";
 
 interface CommentsProps {
     list: IComment[]
@@ -17,17 +18,25 @@ const CommentsList: FC<CommentsProps> = ({list}) => {
         let newComment:IComment = {
             _id: getRandomId(),
             content: input,
-            replies: []
+            replies: [],
+            deleted: false,
+            createdAt: DateTime.now()
         }
         setCommentsListState([...commentsListState, newComment])
         setInput('')
     }
 
-    function addReply(message: string) {
-        let newReply: IComment = {
-            _id: getRandomId(),
-            content: message,
-            replies: []
+
+    function deleteComment(id: string, hasReplies: boolean) {
+        if (hasReplies) {
+            setCommentsListState(commentsListState.map(reply => {
+                if (reply._id === id) {
+                    return {...reply, deleted: true}
+                }
+                return reply
+            }))
+        } else {
+            setCommentsListState(commentsListState.filter(reply => reply._id !== id))
         }
     }
 
@@ -44,7 +53,7 @@ const CommentsList: FC<CommentsProps> = ({list}) => {
             <br/>
             <Button className={'add'} onCLick={addComment}>Add</Button>
             <div className={'comments-list'}>
-                {commentsListState.map(comment => <Comment comment={comment} key={comment._id} />)}
+                {commentsListState.map(comment => <Comment comment={comment} key={comment._id} deleteItem={deleteComment}/>)}
             </div>
         </div>
     );

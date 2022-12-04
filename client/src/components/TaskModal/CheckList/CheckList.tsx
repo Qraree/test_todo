@@ -16,10 +16,10 @@ const CheckList: FC<CheckListProps> = ({list}) => {
     function updateStatus(id: string) {
         setCheckListState(checkListState.map(subTask => {
             if (subTask._id === id) {
-                return {...subTask, done: true}
+                return {...subTask, done: !subTask.done}
             }
             return subTask
-        })) //todo false option
+        }))
     }
 
     function addNewSubTask() {
@@ -50,7 +50,6 @@ const CheckList: FC<CheckListProps> = ({list}) => {
                         deleteSubTask={deleteSubTask}
                     />))}
             </div>
-            {/*<Input className={'add-subtask'} value={input} onChange={(e) => setInput(e.target.value)}/>*/}
             <input className={'add-subtask'} value={input} onChange={(e) => setInput(e.target.value)}/>
             <button className={'add'} onClick={addNewSubTask}>Add</button>
         </div>

@@ -17,7 +17,9 @@ export interface ITask {
 export interface IComment {
     _id: string
     content: string,
-    replies: IComment[]
+    replies: IComment[],
+    deleted: boolean,
+    createdAt: DateTime,
 }
 
 export interface IFile {
@@ -30,4 +32,10 @@ export interface ICheckListItem {
     _id: string;
     name: string,
     done: boolean
+}
+
+export enum TaskStatus {
+    QUEUE = "QUEUE",
+    DEVELOPMENT = "DEVELOPMENT",
+    DONE = "DONE",
 }

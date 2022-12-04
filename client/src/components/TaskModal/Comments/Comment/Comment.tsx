@@ -1,22 +1,34 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {IComment} from "../../../../types/task";
 import './Comment.scss'
 import Button from "../../../Button/Button";
 import {getRandomId} from "../../../../utils/random_id";
+import Replies from "./Replies/Replies";
+import CommentContent from "./CommentContent/CommentContent";
+import {DateTime} from "luxon";
 
 interface CommentProps {
     comment: IComment,
+    deleteItem: (id: string, hasReplies: boolean) => void,
 }
 
-const Comment:FC<CommentProps> = ({comment}) => {
+const Comment:FC<CommentProps> = ({comment, deleteItem}) => {
     const [activeInput, setActiveInput] = useState<boolean>(false)
     const [replies, setReplies] = useState<IComment[]>(comment.replies)
     const [input, setInput] = useState<string>('')
     const [hideReplies, setHideReplies] = useState<boolean>(false)
 
-
-    function replyHandler() {
-        setActiveInput(true)
+    function deleteComment(id: string, hasReplies: boolean) {
+        if (hasReplies) {
+            setReplies(replies.map(reply => {
+                if (reply._id === id) {
+                    return {...reply, deleted: true}
+                }
+                return reply
+            }))
+        } else {
+            setReplies(replies.filter(reply => reply._id !== id))
+        }
     }
 
     function sendReplyHandler() {
@@ -24,7 +36,9 @@ const Comment:FC<CommentProps> = ({comment}) => {
         let newReply: IComment = {
             _id: getRandomId(),
             content: input,
-            replies: []
+            replies: [],
+            deleted: false,
+            createdAt: DateTime.now()
         }
         setReplies([...replies, newReply])
         setInput('')
@@ -35,42 +49,46 @@ const Comment:FC<CommentProps> = ({comment}) => {
     }
 
 
+    function deleteHandler() {
+        deleteItem(comment._id, replies.length !== 0)
+    }
+
     return (
         <div className={'comment'}>
-            <p style={{margin: 0}}>User</p>
-            <div className={'comment-content'}>
-                <div className={'comment-text'}>
-                    {comment.content}
+            <div style={{margin: 0}} className={'comment-header'}>
+                <div>
+                    User
                 </div>
-                <div className={'comment-buttons'}>
-                    {replies && replies.length > 0 ? ( hideReplies ? (
-                        <Button className={'delete-file'} onCLick={hideRepliesHandler}>Show replies</Button>
-                    ) : (<Button className={'delete-file'} onCLick={hideRepliesHandler}>Hide replies</Button>)
-                    ) : null}
-                    <Button className={'delete-file'} onCLick={replyHandler}>Reply</Button>
-                </div>
+                <div  className={'sending-time'}>{comment.createdAt.toLocaleString(DateTime.DATETIME_MED)}</div>
             </div>
+            <CommentContent
+                comment={comment}
+                replies={replies}
+                setActiveInput={setActiveInput}
+                hideRepliesHandler={hideRepliesHandler}
+                deleteHandler={deleteHandler}
+                commentDeleted={comment.deleted}/>
             {activeInput ? (
                 <>
-                    <textarea rows={5} cols={75} className={'reply-input'} value={input} onChange={(e) => setInput(e.target.value)}/>
+                    <textarea
+                        rows={5}
+                        cols={75}
+                        className={'reply-input'}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}/>
                     <br/>
                     <Button className={'add'} onCLick={sendReplyHandler}>Add</Button>
                 </>
             ) : null}
-            <div className={'replies'}>
-                <div className={'replies-list'}>
-                    {hideReplies ? null : (<>
-                        {replies &&
-                            replies.map(reply => <Comment comment={reply} key={comment._id}/>)
-                        }
-                    </>)}
-
-                </div>
-            </div>
+            <Replies
+                replies={replies}
+                hideReplies={hideReplies}
+                comment={comment}
+                deleteComment={deleteComment}/>
         </div>
     );
 };
 
 
-//todo length of comments
+
 export default Comment;
