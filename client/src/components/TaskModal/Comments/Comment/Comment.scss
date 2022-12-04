@@ -1,9 +1,6 @@
 .comment {
   width: 95%;
   height: 30%;
-  //display: flex;
-  //flex-direction: column;
-  //align-items: flex-end;
 }
 
 .comment-content {
@@ -16,9 +13,8 @@
   box-sizing: border-box;
   border-radius: 5px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 }
 
 .replies {
@@ -26,6 +22,8 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  //outline: solid;
+  border-left: 2px solid gainsboro;
 }
 
 .replies-list {
@@ -38,7 +36,7 @@
 }
 
 .comment-text {
-  max-width: 80%;
+  max-width: 100%;
   word-break: break-all;
 }
 
@@ -47,9 +45,24 @@
 }
 
 .comment-buttons {
-  width: 20%;
+  width: 220px;
   //border: 2px solid black;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: row;
+}
+
+.sending-time {
+  display: inline-block;
+  //margin-left: 5px;
+  color: #8c8b8b;
+  font-size: 14px;
+  //margin-right: 0;
+
+}
+
+.comment-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
