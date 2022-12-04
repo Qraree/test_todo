@@ -24,8 +24,8 @@ export const initialState = {
             }],
         projectId: '1',
         comments: [
-            {_id: '1', content: 'Bla-bla-bla', replies: [{_id: '1',content: 'You okay?', replies: []}]},
-            {_id: '1',content: 'I will do this task!', replies: []}
+            {_id: '1', content: 'Bla-bla-bla', replies: [{_id: '1',content: 'You okay?', replies: [], deleted: false, createdAt: DateTime.now()}], deleted: false, createdAt: DateTime.now()},
+            {_id: '1',content: 'I will do this task!', replies: [], deleted: false, createdAt: DateTime.now()}
         ]
 
     },
