@@ -3,7 +3,13 @@ import {UiAction, UiActionTypes, UiState} from "../../types/ui";
 
 export const initialState = {
     showDescription: true,
-    currentProject: '',
+    currentProject:{
+        _id: '2',
+        name: 'hello',
+        taskColumns: []
+    },
+    currentBoard: null,
+    currentTask: null,
 }
 
 export const uiReducer = (state = initialState, action: UiAction): UiState => {
@@ -22,6 +28,16 @@ export const uiReducer = (state = initialState, action: UiAction): UiState => {
             return {
                 ...state,
                 currentProject: action.payload
+            }
+        case UiActionTypes.SET_CURRENT_BOARD:
+            return {
+                ...state,
+                currentBoard: action.payload
+            }
+        case UiActionTypes.SET_CURRENT_TASK:
+            return {
+                ...state,
+                currentTask: action.payload
             }
         default:
             return state

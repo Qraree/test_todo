@@ -10,6 +10,7 @@ import {useTypedSelector} from "../../hooks/useTypedSelector";
 const Navbar = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    // @ts-ignore
     const currentProject = useTypedSelector(state => state.ui.currentProject)
 
     function clickHandler() {

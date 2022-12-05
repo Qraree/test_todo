@@ -11,6 +11,7 @@ interface DescriptionProps {
 const Description: FC<DescriptionProps> = ({description}) => {
     const [input, setInput] = useState<string>('')
     const [descriptionState, setDescriptionState] = useState<string>('')
+    // @ts-ignore
     const showDescription = useTypedSelector(state => state.ui.showDescription)
     const dispatch = useDispatch()
 

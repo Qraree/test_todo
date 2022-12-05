@@ -1,4 +1,5 @@
 import {ITask} from "./task";
+import {ITaskColumn} from "./taskColumn";
 
 export enum TasksActionTypes {
     CHANGE_STATUS = "CHANGE_STATUS",
@@ -12,7 +13,7 @@ interface ChangeStatusAction {
 export type TaskAction = ChangeStatusAction
 
 export interface TasksState {
-    tasks: ITask[]
+    tasks: ITask[],
 }
 
 

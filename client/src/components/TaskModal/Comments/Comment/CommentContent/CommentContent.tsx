@@ -55,3 +55,5 @@ const CommentContent: FC<CommentContentProps> = ({comment,
 };
 
 export default CommentContent;
+
+// todo show comments

@@ -5,47 +5,51 @@ import {useDispatch} from "react-redux";
 import {ModalActionTypes} from "../../../types/modal";
 import {useDrag} from "react-dnd";
 import {TaskTypes} from "../../../react dnd types/types";
+import {UiActionTypes} from "../../../types/ui";
+import {useTypedSelector} from "../../../hooks/useTypedSelector";
 
 interface TaskProps {
-    task: ITask
+    task: ITask,
+    list: any
 }
 
-const Task: FC<TaskProps> = ({task}) => {
+const Task: FC<TaskProps> = ({task, list}) => {
     const dispatch = useDispatch()
+    const {currentBoard, currentTask} = useTypedSelector(state => state.ui)
 
 
-    // function dragOverHandler(e: React.DragEvent<HTMLDivElement>) {
-    //     e.preventDefault()
-    //     if ((e.target as HTMLTextAreaElement).className === 'task') {
-    //         (e.target as HTMLTextAreaElement).style.boxShadow = '0 4px 3px gray'
-    //     }
-    //
-    // }
-    //
-    //
-    // function dragLeaveHandler(e: React.DragEvent<HTMLDivElement>) {
-    //     (e.target as HTMLTextAreaElement).style.boxShadow = 'none'
-    // }
-    //
-    // function dragStartHandler(e: React.DragEvent<HTMLDivElement>) {
-    //
-    // }
-    //
-    // function dragEndHandler(e: React.DragEvent<HTMLDivElement>) {
-    //     (e.target as HTMLTextAreaElement).style.boxShadow = 'none'
-    // }
-    //
-    // function dropHandler(e: React.DragEvent<HTMLDivElement>) {
-    //     e.preventDefault()
-    //
-    // }
+    function dragOverHandler(e: React.DragEvent<HTMLDivElement>) {
+        e.preventDefault()
+        if ((e.target as HTMLTextAreaElement).className === 'task') {
+            (e.target as HTMLTextAreaElement).style.boxShadow = '0 4px 3px gray'
+        }
 
-    const [{isDragging}, drag] = useDrag(() => ({
-        type: TaskTypes.TASK,
-        collect: monitor => ({
-            isDragging: !!monitor.isDragging()
-        })
-    }))
+    }
+
+    function dragLeaveHandler(e: React.DragEvent<HTMLDivElement>) {
+        (e.target as HTMLTextAreaElement).style.boxShadow = 'none'
+    }
+
+    function dragStartHandler(e: React.DragEvent<HTMLDivElement>, list: any, task: any) {
+        dispatch({type: UiActionTypes.SET_CURRENT_BOARD, payload: list})
+        dispatch({type: UiActionTypes.SET_CURRENT_TASK, payload: task})
+    }
+
+    function dragEndHandler(e: React.DragEvent<HTMLDivElement>) {
+        (e.target as HTMLTextAreaElement).style.boxShadow = 'none'
+    }
+
+    function dropHandler(e: React.DragEvent<HTMLDivElement>, list:any, task: any) {
+        e.preventDefault()
+
+    }
+
+    // const [{isDragging}, drag] = useDrag(() => ({
+    //     type: TaskTypes.TASK,
+    //     collect: monitor => ({
+    //         isDragging: !!monitor.isDragging()
+    //     })
+    // }))
 
 
     const colorList = {
@@ -60,17 +64,14 @@ const Task: FC<TaskProps> = ({task}) => {
 
     return (
         <div
-            ref={drag}
+            // ref={drag}
             className={'task'}
-            // onDragOver={e => dragOverHandler(e)}
-            // onDragLeave={e => dragLeaveHandler(e)}
-            // onDragStart={e => dragStartHandler(e)}
-            // onDragEnd={e => dragEndHandler(e)}
-            // onDrop={e => dropHandler(e)}
-            // style={{
-            //     opacity: isDragging ? 0.5 : 1,
-            //     cursor: 'move',
-            // }}
+            onDragOver={e => dragOverHandler(e)}
+            onDragLeave={e => dragLeaveHandler(e)}
+            onDragStart={e => dragStartHandler(e, list, task)}
+            onDragEnd={e => dragEndHandler(e)}
+            onDrop={e => dropHandler(e, list, task)}
+            draggable={true}
             onClick={showModalHandler}
 
         >

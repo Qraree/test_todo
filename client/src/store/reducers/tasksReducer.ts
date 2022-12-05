@@ -68,67 +68,123 @@ export const initialState = {
 
             ]
         },
-        // {
-        //     _id: '2',
-        //     name: 'Call mom',
-        //     description: 'Need to call mom',
-        //     createdAt: DateTime.local(2022, 11, 15, 8, 30),
-        //     deadline: DateTime.local(2022, 12, 15, 8, 30),
-        //     priority: 3,
-        //     files: [
-        //         {_id: '123', name: 'File1.txt', added: DateTime.local(2022, 11, 15, 8, 30)},
-        //     ],
-        //     status: TaskStatus.DEVELOPMENT,
-        //     checkList: [{
-        //         _id: '1241',
-        //         name: 'Call mom',
-        //         done: false
-        //     },
-        //
-        //         ],
-        //     projectId: '1',
-        //     comments: [
-        //         {
-        //             _id: '12151350', content: 'Bla-bla-bla',
-        //             replies: [
-        //                 {_id: '12133', content: 'You okay?', replies: [{_id: '4154220', content: 'Hello!', replies: [
-        //                             {
-        //                                 _id: '123431',
-        //                                 content: 'You okay?',
-        //                                 replies: [{
-        //                                     _id: '12593',
-        //                                     content: 'Hello!',
-        //                                     replies: [],
-        //                                     deleted: false,
-        //                                     createdAt: DateTime.local(2022, 11, 15, 8, 30)}],
-        //                                 deleted: false,
-        //                                 createdAt: DateTime.local(2022, 11, 15, 8, 30)
-        //                             },
-        //                             {
-        //                                 _id: '12332',
-        //                                 content: 'You okay?',
-        //                                 replies: [{
-        //                                     _id: '16623',
-        //                                     content: 'Hello!',
-        //                                     replies: [],
-        //                                     deleted: false,
-        //                                     createdAt: DateTime.local(2022, 11, 15, 8, 30)}],
-        //                                 deleted: false,
-        //                                 createdAt: DateTime.local(2022, 11, 15, 8, 30)}
-        //                         ], deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)}], deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)},
-        //                 {
-        //                     _id: '14124',
-        //                     content: 'You okay?',
-        //                     replies: [{_id: '8123', content: 'Hello!', replies: [], deleted: true, createdAt: DateTime.local(2022, 11, 15, 8, 30)}],
-        //                     deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)}
-        //             ], deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)
-        //         },
-        //
-        //     ]
-        // },
+        {
+            _id: '2',
+            name: 'Call mom',
+            description: 'Need to call mom',
+            createdAt: DateTime.local(2022, 11, 15, 8, 30),
+            deadline: DateTime.local(2022, 12, 15, 8, 30),
+            priority: 3,
+            files: [
+                {_id: '123', name: 'File1.txt', added: DateTime.local(2022, 11, 15, 8, 30)},
+            ],
+            status: TaskStatus.DEVELOPMENT,
+            checkList: [{
+                _id: '1241',
+                name: 'Call mom',
+                done: false
+            },
 
+                ],
+            projectId: '1',
+            comments: [
+                {
+                    _id: '121511350', content: 'Bla-bla-bla',
+                    replies: [
+                        {_id: '121433', content: 'You okay?', replies: [{_id: '41542520', content: 'Hello!', replies: [
+                                    {
+                                        _id: '123431',
+                                        content: 'You okay?',
+                                        replies: [{
+                                            _id: '12593',
+                                            content: 'Hello!',
+                                            replies: [],
+                                            deleted: false,
+                                            createdAt: DateTime.local(2022, 11, 15, 8, 30)}],
+                                        deleted: false,
+                                        createdAt: DateTime.local(2022, 11, 15, 8, 30)
+                                    },
+                                    {
+                                        _id: '12332',
+                                        content: 'You okay?',
+                                        replies: [{
+                                            _id: '16623',
+                                            content: 'Hello!',
+                                            replies: [],
+                                            deleted: false,
+                                            createdAt: DateTime.local(2022, 11, 15, 8, 30)}],
+                                        deleted: false,
+                                        createdAt: DateTime.local(2022, 11, 15, 8, 30)}
+                                ], deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)}], deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)},
+                        {
+                            _id: '14124',
+                            content: 'You okay?',
+                            replies: [{_id: '8123', content: 'Hello!', replies: [], deleted: true, createdAt: DateTime.local(2022, 11, 15, 8, 30)}],
+                            deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)}
+                    ], deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)
+                },
 
-]
+            ]
+        },
+        {
+            _id: '4',
+            name: 'Call mom',
+            description: 'Need to call mom',
+            createdAt: DateTime.local(2022, 11, 15, 8, 30),
+            deadline: DateTime.local(2022, 12, 15, 8, 30),
+            priority: 3,
+            files: [
+                {_id: '123', name: 'File1.txt', added: DateTime.local(2022, 11, 15, 8, 30)},
+            ],
+            status: TaskStatus.DEVELOPMENT,
+            checkList: [{
+                _id: '1241',
+                name: 'Call mom',
+                done: false
+            },
+
+            ],
+            projectId: '1',
+            comments: [
+                {
+                    _id: '12151350', content: 'Bla-bla-bla',
+                    replies: [
+                        {_id: '12133', content: 'You okay?', replies: [{_id: '4154220', content: 'Hello!', replies: [
+                                    {
+                                        _id: '123431',
+                                        content: 'You okay?',
+                                        replies: [{
+                                            _id: '12593',
+                                            content: 'Hello!',
+                                            replies: [],
+                                            deleted: false,
+                                            createdAt: DateTime.local(2022, 11, 15, 8, 30)}],
+                                        deleted: false,
+                                        createdAt: DateTime.local(2022, 11, 15, 8, 30)
+                                    },
+                                    {
+                                        _id: '12332',
+                                        content: 'You okay?',
+                                        replies: [{
+                                            _id: '16623',
+                                            content: 'Hello!',
+                                            replies: [],
+                                            deleted: false,
+                                            createdAt: DateTime.local(2022, 11, 15, 8, 30)}],
+                                        deleted: false,
+                                        createdAt: DateTime.local(2022, 11, 15, 8, 30)}
+                                ], deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)}], deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)},
+                        {
+                            _id: '14124',
+                            content: 'You okay?',
+                            replies: [{_id: '8123', content: 'Hello!', replies: [], deleted: true, createdAt: DateTime.local(2022, 11, 15, 8, 30)}],
+                            deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)}
+                    ], deleted: false, createdAt: DateTime.local(2022, 11, 15, 8, 30)
+                },
+
+            ]
+        },
+        ],
 }
 
 export const tasksReducer = (state = initialState, action: TaskAction): TasksState => {

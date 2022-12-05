@@ -14,7 +14,7 @@ const Project: FC<ProjectProps> = ({project}) => {
     const dispatch = useDispatch()
 
     function navigateToProject() {
-        dispatch({type: UiActionTypes.SET_CURRENT_PROJECT, payload: `${project._id}`})
+        dispatch({type: UiActionTypes.SET_CURRENT_PROJECT, payload: project})
         navigate(`/projects/${project._id}`)
     }
 
